@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53DD82A8-C0DD-418B-9AF5-9ED26B31DE3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hudson</RootNamespace>
+    <AssemblyName>Hudson.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Castle\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\BuildCache.cs" />
+    <Compile Include="Core\Windsor.cs" />
+    <Compile Include="Domain\Build.cs" />
+    <Compile Include="Domain\BuildDescriptor.cs" />
+    <Compile Include="Domain\BuildStatus.cs" />
+    <Compile Include="Domain\NullBuild.cs" />
+    <Compile Include="Domain\NullJob.cs" />
+    <Compile Include="Domain\NullServer.cs" />
+    <Compile Include="Domain\XmlPage.cs" />
+    <Compile Include="Domain\Job.cs" />
+    <Compile Include="Domain\JobDescriptor.cs" />
+    <Compile Include="Domain\Server.cs" />
+    <Compile Include="Extensions\FindExtension.cs" />
+    <Compile Include="Core\HudsonException.cs" />
+    <Compile Include="Interfaces\IContext.cs" />
+    <Compile Include="Interfaces\ISetting.cs" />
+    <Compile Include="Interfaces\Services\IBuildService.cs" />
+    <Compile Include="Interfaces\Services\IJobService.cs" />
+    <Compile Include="Mappers\BuildDescriptorMapper.cs" />
+    <Compile Include="Mappers\BuildMapper.cs" />
+    <Compile Include="Mappers\JobMapper.cs" />
+    <Compile Include="Models\JobModel.cs" />
+    <Compile Include="Models\Selectors\BuildPercentSelector.cs" />
+    <Compile Include="Models\Selectors\BuildStatusSelector.cs" />
+    <Compile Include="Models\Selectors\TextSelector.cs" />
+    <Compile Include="Models\Selectors\TitleSelector.cs" />
+    <Compile Include="Models\ServerModel.cs" />
+    <Compile Include="Parsers\BuildStatusParser.cs" />
+    <Compile Include="Interfaces\Services\IXmlService.cs" />
+    <Compile Include="Interfaces\Services\IServerService.cs" />
+    <Compile Include="Mappers\JobDescriptorMapper.cs" />
+    <Compile Include="Mappers\ServerMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BuildService.cs" />
+    <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\XmlService.cs" />
+    <Compile Include="Services\ServerService.cs" />
+    <Compile Include="Core\XmlApiPrepender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\Core.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

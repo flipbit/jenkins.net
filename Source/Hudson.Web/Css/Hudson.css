@@ -1,0 +1,63 @@
+﻿html, body
+{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+p
+{
+	clear: both;
+	height: 12%;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 200%;
+	font-weight: bold;
+	line-height: 100%;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+.label
+{
+	display: block;
+	float: left;
+	overflow: hidden;
+	width: 40%;
+}
+.info
+{
+	display: block;
+	float: left;
+	width: 59%;
+}
+.double
+{
+	height: 24%;
+}
+.passed {
+	background-color: #139C00;
+	color: #fff;
+}
+.failed {
+	background-color: #D10000;
+	color: #fff;
+}
+.unknown {
+	background-color: #757575;
+	color: #fff;
+}
+.building {
+	background-color: #FF8A00;
+	color: #fff;	
+}
+.error {
+	background-color: #000;
+	color: #fff;
+}
+.error p
+{
+	height: 48px;
+	font-size: 48px !important;
+	margin-top: 200px;
+	text-align: center;
+}

@@ -1,0 +1,38 @@
+﻿<freeStyleBuild>
+  <action>
+    <cause>
+      <shortDescription>Started by user</shortDescription>
+    </cause>
+  </action>
+  <action></action>
+  <building>true</building>
+  <duration>28204</duration>
+  <fullDisplayName>first-job #92</fullDisplayName>
+  <keepLog>false</keepLog>
+  <number>92</number>
+  <result>SUCCESS</result>
+  <timestamp>1245606576953</timestamp>
+  <url>http://www.example.com/job/first-job/92/</url>
+  <builtOn></builtOn>
+  <changeSet>
+    <item>
+      <date>2009-06-21</date>
+      <msg>Changed account.</msg>
+      <path>
+        <editType>edit</editType>
+        <file>/Source/File.cs</file>
+      </path>
+      <revision>119</revision>
+      <user>user</user>
+    </item>
+    <kind>svn</kind>
+    <revision>
+      <module>svn://www.example.com/respository</module>
+      <revision>119</revision>
+    </revision>
+  </changeSet>
+  <culprit>
+    <absoluteUrl>http://www.example.com/user/user</absoluteUrl>
+    <fullName>user</fullName>
+  </culprit>
+</freeStyleBuild>

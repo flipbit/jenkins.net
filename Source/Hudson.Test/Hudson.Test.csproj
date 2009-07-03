@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99E6F147-616A-4604-9D1A-51E655D0B53F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hudson</RootNamespace>
+    <AssemblyName>Hudson.Test</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq, Version=2.6.1014.1, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Moq\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\BuildCacheTest.cs" />
+    <Compile Include="Factories\BuildFactory.cs" />
+    <Compile Include="Factories\JobFactory.cs" />
+    <Compile Include="Factories\XmlFactory.cs" />
+    <Compile Include="Mappers\BuildMapperTest.cs" />
+    <Compile Include="Mappers\JobDescriptorMapperTest.cs" />
+    <Compile Include="Mappers\JobMapperTest.cs" />
+    <Compile Include="Models\JobModelTest.cs" />
+    <Compile Include="Models\Selectors\BuildPercentSelectorTest.cs" />
+    <Compile Include="Models\Selectors\BuildStatusSelectorTest.cs" />
+    <Compile Include="Models\Selectors\TextSelectorTest.cs" />
+    <Compile Include="Models\Selectors\TitleSelectorTest.cs" />
+    <Compile Include="Models\ServerModelTest.cs" />
+    <Compile Include="Parsers\BuildStatusParserTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BuildServiceTest.cs" />
+    <Compile Include="Services\JobServiceTest.cs" />
+    <Compile Include="Services\XmlServiceTest.cs" />
+    <Compile Include="Services\ServerServiceTest.cs" />
+    <Compile Include="Tray\Presenters\BasePresenterTest.cs" />
+    <Compile Include="Tray\Presenters\FakePresenter.cs" />
+    <Compile Include="Core\XmlApiPrependerTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hudson.Core\Hudson.Core.csproj">
+      <Project>{53DD82A8-C0DD-418B-9AF5-9ED26B31DE3E}</Project>
+      <Name>Hudson.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hudson.Tray\Hudson.Tray.csproj">
+      <Project>{8DEF6C4E-0908-4198-9148-4ABC0F85AFC7}</Project>
+      <Name>Hudson.Tray</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Xml\BuildResponse.xml" />
+    <Content Include="Xml\JobResponse.xml" />
+    <Content Include="Xml\ServerResponse.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
