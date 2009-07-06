@@ -1,24 +1,24 @@
 ﻿<Window x:Class="Hudson.Tray.Windows.PreferenceWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Hudson Monitor Preferences" Height="397.532" Width="499" Loaded="Window_Loaded" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Icon="/Hudson.Tray;component/Resources/Hudson.ico">    
-    <Grid Height="359" Width="475" VerticalAlignment="Top" Margin="0,10,0,0">
-        <TabControl Name="tabControl1" Margin="0,0,0,46.023">
+    Title="Hudson Monitor Preferences" Height="329" Width="499" Loaded="Window_Loaded" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Icon="/Hudson.Tray;component/Resources/Hudson.ico">    
+    <Grid Height="364" Width="475" VerticalAlignment="Top" Margin="0,10,0,0">
+        <TabControl Name="tabControl1" Margin="0,0,0,120">
             <TabItem Header="Server" Name="tabItem1">
-                <Grid Height="220.11" Width="449" VerticalAlignment="Top">
+                <Grid Height="204" Width="449" VerticalAlignment="Top">
                     <Label Margin="6,13,0,0" Name="lblServer" Loaded="Window_Loaded" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73">Server:</Label>
                     <TextBox Height="23" Margin="129,13,6,0" Name="Server" VerticalAlignment="Top" />
                     <Label Height="23" HorizontalAlignment="Left" Margin="6,51,0,0" Name="label1" VerticalAlignment="Top" Width="73">Username:</Label>
                     <TextBox Height="23" Margin="129,51,6,0" Name="Username" VerticalAlignment="Top" />
                     <Label HorizontalAlignment="Left" Margin="6,91,0,0" Name="label2" Width="73" Height="23" VerticalAlignment="Top">Password:</Label>
-                    <Label Height="29" HorizontalAlignment="Left" Margin="6,0,0,64" Name="label3" VerticalAlignment="Bottom" Width="73">Poll Every:</Label>
-                    <PasswordBox Margin="129,91,6,106" Name="Password" />
-                    <Slider Height="22" Margin="129,0,6,71" Name="PollEvery" VerticalAlignment="Bottom" Minimum="10" Maximum="300" ValueChanged="PollEvery_ValueChanged" />
-                    <Label Height="29" Margin="129,0,6,36" Name="PollEveryLabel" VerticalAlignment="Bottom" HorizontalContentAlignment="Center">10 seconds</Label>
+                    <Label Height="29" HorizontalAlignment="Left" Margin="6,0,0,50" Name="label3" VerticalAlignment="Bottom" Width="73">Poll Every:</Label>
+                    <PasswordBox Name="Password" Margin="129,90.5,6,90.5" />
+                    <Slider Height="22" Margin="129,0,6,52" Name="PollEvery" VerticalAlignment="Bottom" Minimum="10" Maximum="300" ValueChanged="PollEvery_ValueChanged" />
+                    <Label Height="29" Margin="129,0,6,17" Name="PollEveryLabel" VerticalAlignment="Bottom" HorizontalContentAlignment="Center">10 seconds</Label>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Margin="164.249,0,235.751,12" Name="Save" Height="22.678" VerticalAlignment="Bottom" Click="Save_Click">Save</Button>
-        <Button HorizontalAlignment="Right" Margin="0,0,123,17" Name="Cancel" Width="75" Height="23" VerticalAlignment="Bottom" Click="Cancel_Click">Cancel</Button>
+        <Button Margin="0,0,81,83" Name="Save" Height="22.678" VerticalAlignment="Bottom" Click="Save_Click" HorizontalAlignment="Right" Width="75">Save</Button>
+        <Button HorizontalAlignment="Right" Margin="0,0,0,83" Name="Cancel" Width="75" Height="23" VerticalAlignment="Bottom" Click="Cancel_Click">Cancel</Button>
     </Grid>
 </Window>

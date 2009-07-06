@@ -1,0 +1,36 @@
+<project name="deploy-tray-stage">
+
+	<target name="DeployTray">
+
+		<property name="revision.dir" value="${deploy.dir}\Tray" overwrite="true" />
+		<property name="install.latest.filename" value="${deploy.dir}\hudson-tray-monitor-latest.zip" />
+
+		<delete dir="${revision.dir}" if="${directory::exists(revision.dir)}" />
+		<mkdir dir="${revision.dir}" />
+
+		<copy todir="${revision.dir}">
+			<fileset basedir="${root.dir}\Source\Hudson.Tray\bin\Release">
+				<include name="*.dll" />
+				<include name="*.exe" />
+			</fileset>
+		</copy>
+
+		<copy todir="${revision.dir}">
+			<fileset basedir="${root.dir}">
+				<include name="hudson.nsi" />
+			</fileset>
+		</copy>
+
+		<zip zipfile="${revision.dir}\..\hudson-tray-monitor-${revision}.zip">
+			<fileset basedir="${revision.dir}">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+
+		<!-- Copy zip to latest filename -->
+		<delete file="${install.latest.filename}" if="${file::exists(install.latest.filename)}" />
+		<copy file="${revision.dir}\..\hudson-tray-monitor-${revision}.zip" tofile="${install.latest.filename}" />
+
+	</target>
+
+</project>

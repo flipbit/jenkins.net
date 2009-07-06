@@ -1,0 +1,18 @@
+<project name="Hudson" basedir="." default="SetGlobalProperties">
+	<target name="SetGlobalProperties">
+
+		<property name="artifacts.dir" value="${root.dir}\Artifacts" readonly="true" />
+		<property name="resources.dir" value="${root.dir}\Build\Resources" readonly="true" />
+
+		<property name="dotnet35" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5" overwrite="false" />
+		<property name="dotnet20" value="C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727" overwrite="false" />
+
+
+		<property name="revision" value="local"/>
+
+		<if test="${environment::variable-exists('BUILD_NUMBER')}">
+			<property name="revision" value="${environment::get-variable('BUILD_NUMBER')}" />
+		</if>
+
+	</target>
+</project>

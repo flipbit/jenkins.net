@@ -1,0 +1,7 @@
+<project name="Hudson" basedir="." default="SetProperties">
+	<target name="SetProperties">
+		<property name="stages" value="Clean,Compile,DeployWeb,DeployTray,CreateInstaller" readonly="false"/>
+		<property name="system.test.browsers" value="iexplore" readonly="true"/>
+		<property name="deploy.dir" value="${root.dir}\Deploy" readonly="true" />
+	</target>
+</project>

@@ -1,0 +1,44 @@
+<project name="deploy-web-stage">
+
+	<target name="DeployWeb">
+
+		<property name="revision.dir" value="${deploy.dir}\Web" overwrite="true" />
+		<property name="install.latest.filename" value="${deploy.dir}\hudson-web-monitor-latest.zip" />
+
+		<delete dir="${revision.dir}" if="${directory::exists(revision.dir)}" />
+		<mkdir dir="${revision.dir}" />
+
+		<exec program="${dotnet20}\aspnet_compiler.exe">
+			<arg value="-f" />
+			<arg value="-u" />
+			<arg value="-p" />
+			<arg value="${root.dir}\Source\Hudson.Web" />
+			<arg value="-v" />
+			<arg value="/Seo" />
+			<arg value="${revision.dir}" />
+		</exec>
+
+		<delete includeemptydirs="true">
+			<fileset>
+				<include name="${revision.dir}\**\*.csproj"/>
+				<include name="${revision.dir}\**\*.pdb"/>
+				<include name="${revision.dir}\**\obj\**\*.*"/>
+				<include name="${revision.dir}\**\Properties\**\*.*"/>
+			</fileset>
+		</delete>
+
+		<zip zipfile="${revision.dir}\..\hudson-web-monitor-${revision}.zip">
+			<fileset basedir="${revision.dir}">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+
+		<delete dir="${revision.dir}" if="${directory::exists(revision.dir)}" />
+
+		<!-- Copy zip to latest filename -->
+		<delete file="${install.latest.filename}" if="${file::exists(install.latest.filename)}" />
+		<copy file="${revision.dir}\..\hudson-web-monitor-${revision}.zip" tofile="${install.latest.filename}" />
+
+	</target>
+
+</project>

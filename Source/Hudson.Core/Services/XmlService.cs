@@ -60,10 +60,6 @@ namespace Hudson.Services
             catch (WebException ex)
             {
                 throw new HudsonException(ex.Message);
-
-                MessageBox.Show(url + Environment.NewLine + ex.Message);
-
-                page = new XmlPage(url);
             }
 
             return page;

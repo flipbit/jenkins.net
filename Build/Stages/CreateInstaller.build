@@ -1,0 +1,26 @@
+<project name="create-installer-stage">
+
+	<target name="CreateInstaller">
+
+		<property name="revision.dir" value="${deploy.dir}\Tray" overwrite="true" />
+		<property name="install.filename" value="${revision.dir}\..\install-hudson-tray.${revision}.exe" />
+		<property name="install.latest.filename" value="${deploy.dir}\install-hudson-tray-latest.exe" />
+
+		<exec program="${root.dir}\Build\Resources\NSIS\makensis.exe"
+			  workingdir="${revision.dir}">
+			<arg value="hudson.nsi"/>
+		</exec>
+
+		<delete file="${install.filename}" if="${file::exists(install.filename)}" />
+
+		<move file="${revision.dir}\install.hudson.tray.exe" tofile="${install.filename}" />
+
+		<delete dir="${revision.dir}" />
+
+		<!-- Copy installation to latest filename -->
+		<delete file="${install.latest.filename}" if="${file::exists(install.latest.filename)}" />
+		<copy file="${install.filename}" tofile="${install.latest.filename}" />
+
+	</target>
+
+</project>
