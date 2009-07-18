@@ -5,6 +5,12 @@
 	margin: 0;
 	width: 100%;
 }
+h1 {
+	background: #fff url(../images/hudson.png) no-repeat;
+	height: 64px;
+	line-height: 64px;
+	padding-left: 76px;
+}
 p
 {
 	clear: both;
@@ -16,6 +22,40 @@ p
 	padding: 0;
 	margin: 0;
 	vertical-align: middle;
+}
+fieldset {
+	border: none;
+	padding: 0;
+}
+fieldset label {
+	display: inline-block;
+	width: 150px;
+}
+fieldset p {
+	clear: none;
+	font-family: Georgia, "Times New Roman", Sans-Serif;
+	font-size: 18px;
+	font-weight: normal;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle;
+}
+fieldset input {
+	width: 250px;
+}
+fieldset .btn {
+	margin: 10px 0 0 154px;
+	width: 64px;	
+}
+fieldset .info-text {
+	margin-bottom: 10px;
+}
+.container {
+	margin: 150px auto 0;
+	width: 500px;
+}
+.error-text {
+	color: #f00;
 }
 .label
 {

@@ -25,7 +25,7 @@ namespace Hudson
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("Default", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = "" });
+            routes.MapRoute("Default", "{controller}/{action}/{id}", new { controller = "Server", action = "Index", id = "" });
         }
 
         protected void Application_Start()

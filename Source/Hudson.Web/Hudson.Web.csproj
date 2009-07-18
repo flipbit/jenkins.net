@@ -75,8 +75,11 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AbstractController.cs" />
     <Compile Include="Controllers\Context.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\ServerController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,6 +98,9 @@
     <Content Include="Global.asax" />
     <Content Include="Js\Hudson.js" />
     <Content Include="Views\Home\Error.aspx" />
+    <Content Include="Views\Job\Monitor.aspx" />
+    <Content Include="Views\Job\List.aspx" />
+    <Content Include="Views\Server\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.3.2.js" />

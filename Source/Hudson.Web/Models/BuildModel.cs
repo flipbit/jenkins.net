@@ -43,5 +43,11 @@ namespace Hudson.Web.Models
         /// </summary>
         /// <value>The comments.</value>
         public string Comments { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name.</value>
+        public string Name { get; set; }
     }
 }

@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Moq\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="MvcContrib.TestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\MvcContrib\MvcContrib.TestHelper.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\NUnit\nunit.framework.dll</HintPath>
@@ -45,8 +49,16 @@
     <Reference Include="PresentationFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\RhinoMocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
@@ -85,6 +97,8 @@
     <Compile Include="Tray\Presenters\FakePresenter.cs" />
     <Compile Include="Core\XmlApiPrependerTest.cs" />
     <Compile Include="Tray\Windows\PreferenceWindowTest.cs" />
+    <Compile Include="Web\Controllers\ServerControllerTest.cs" />
+    <Compile Include="Web\MvcAssert.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hudson.Core\Hudson.Core.csproj">
@@ -94,6 +108,10 @@
     <ProjectReference Include="..\Hudson.Tray\Hudson.Tray.csproj">
       <Project>{8DEF6C4E-0908-4198-9148-4ABC0F85AFC7}</Project>
       <Name>Hudson.Tray</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hudson.Web\Hudson.Web.csproj">
+      <Project>{64DD23EF-6A2F-4BCF-8391-90FA0C7D6BDC}</Project>
+      <Name>Hudson.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -62,10 +62,6 @@ namespace Hudson.Web.Controllers
                                     User = build.User
                                 };
 
-                model.User = "svnuser";
-                model.Comments = "Changed site repository mappings";
-                model.Revision = 104;
-
                 return View(model);
             }
 
