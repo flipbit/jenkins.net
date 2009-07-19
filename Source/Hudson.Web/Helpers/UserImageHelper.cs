@@ -17,7 +17,7 @@ namespace Hudson.Web.Helpers
         /// <returns></returns>
         public static string UserImage(this HtmlHelper<BuildModel> html, string userName)
         {
-            var image = "unknown";
+            var image = "unknown_user";
 
             if (File.Exists(html.ViewContext.HttpContext.Server.MapPath(@"~\images\" + userName + ".png")))
             {

@@ -35,6 +35,11 @@ namespace Hudson.Web.Controllers
 
         public ActionResult Monitor(string id)
         {
+            if (HudsonServer == null)
+            {
+                return RedirectToAction("index", "server");
+            }
+
             Build build = null;
             Job job = null;
 

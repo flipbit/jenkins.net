@@ -9,6 +9,10 @@
     
     <style type="text/css" media="all">@import "/css/hudson.css";</style>	
        
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />  
+    
+    <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="/js/hudson.js"></script>
     
 </head>
 <body>
@@ -32,7 +36,7 @@
         
                 <p>
                     <label for="url">URL:</label> 
-                    <input type="text" name="url" />
+                    <input type="text" name="url" id="url" />
                 </p>
                 
                 <p>
@@ -45,13 +49,19 @@
                     <input type="password" name="password" />
                 </p>
                 
-                <p>
-                    <input type="submit" value="OK" class="btn" />
+                <p class="btn">
+                    <input type="submit" value="Connect" />
                 </p>
             
             </fieldset>
             
         </form>   
+                
     </div>
+    
+    <p class="about">
+        <a href="http://www.flipbit.co.uk/hudson-monitor.html" title="Hudson Monitor from flipbit.co.uk">Hudson Monitor</a> from flipbit
+    </p>    
+    
 </body>
 </html>

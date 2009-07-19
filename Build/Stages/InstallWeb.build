@@ -1,0 +1,46 @@
+<project name="install-web-stage">
+
+	<target name="InstallWeb">
+
+		<property name="install.dir" value="d:\sites\hudson.flipbit.co.uk" />
+		<property name="computer_name" value="${environment::get-variable('COMPUTERNAME')}" />
+
+		<delete dir="${install.dir}" if="${directory::exists(install.dir)}" />
+		<mkdir dir="${install.dir}" />
+
+		<foreach item="String" in="&quot;IUSR_${computer_name}&quot;:X;X, &quot;ASPNET&quot;:X;X" delim="," property="username">
+			<exec program="cscript">
+				<arg value="${root.dir}\Build\Resources\XCACLS.vbs" />
+				<arg value="${install.dir}" />
+				<arg value="/T" />
+				<arg value="/S" />
+				<arg value="/F" />
+				<arg value="/E" />
+				<arg value="/G" />
+				<arg value="${username}" />
+			</exec>
+		</foreach>
+
+		<exec program="${dotnet20}\aspnet_compiler.exe">
+			<arg value="-f" />
+			<arg value="-u" />
+			<arg value="-p" />
+			<arg value="${root.dir}\Source\Hudson.Web" />
+			<arg value="-v" />
+			<arg value="/Seo" />
+			<arg value="${install.dir}" />
+		</exec>
+
+		<delete includeemptydirs="true">
+			<fileset>
+				<include name="${install.dir}\**\*.csproj"/>
+				<include name="${install.dir}\**\*.user"/>
+				<include name="${install.dir}\**\*.pdb"/>
+				<include name="${install.dir}\**\obj\**\*.*"/>
+				<include name="${install.dir}\**\Properties\**\*.*"/>
+			</fileset>
+		</delete>
+
+	</target>
+
+</project>

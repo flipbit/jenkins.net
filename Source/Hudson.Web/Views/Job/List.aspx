@@ -24,17 +24,20 @@
     
             <% foreach (var job in Model.Jobs) { %>
             
-                <p>
+                <p class="status <%= job.BuildStatus.ToString().ToLower() %>">
                     <a href="monitor/<%= HttpUtility.UrlEncode(job.Name) %>"><%= job.Name %></a>  (<%= job.BuildStatus %>)
                 </p>
                 
             <% } %>
         
-            <p>
-                <a href="/">&lt;&lt; Back</a>
+            <p class="btn" style="padding: 0">
+                <a href="/">Main Menu</a>
             </p>
         
         </fieldset>
     </div>    
+    <p class="about">
+        <a href="http://www.flipbit.co.uk/hudson-monitor.html" title="Hudson Monitor from flipbit.co.uk">Hudson Monitor</a> from flipbit
+    </p>     
 </body>
 </html>

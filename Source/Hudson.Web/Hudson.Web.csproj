@@ -77,7 +77,6 @@
   <ItemGroup>
     <Compile Include="Controllers\AbstractController.cs" />
     <Compile Include="Controllers\Context.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ServerController.cs" />
     <Compile Include="Default.aspx.cs">
@@ -96,22 +95,14 @@
     <Content Include="Css\Hudson.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Js\Monitor.js" />
     <Content Include="Js\Hudson.js" />
-    <Content Include="Views\Home\Error.aspx" />
+    <Content Include="Js\jquery-1.2.6.min-vsdoc.js" />
+    <Content Include="Js\jquery-1.2.6.min.js" />
     <Content Include="Views\Job\Monitor.aspx" />
     <Content Include="Views\Job\List.aspx" />
     <Content Include="Views\Server\Index.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\jquery-1.3.2.js" />
-    <Content Include="Scripts\jquery-1.3.2.min.js" />
-    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>

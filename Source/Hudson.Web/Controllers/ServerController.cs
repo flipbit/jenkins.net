@@ -51,6 +51,9 @@ namespace Hudson.Web.Controllers
             Context.Username = username;
             Context.Password = password;
 
+            // Make sure a protocol is specified
+            if (!url.Contains("://")) url = "http://" + url;
+
             try
             {
                 // Download the server information
