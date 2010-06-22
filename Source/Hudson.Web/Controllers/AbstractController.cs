@@ -39,5 +39,31 @@ namespace Hudson.Web.Controllers
                 Session["error"] = value;
             }
         }
+
+        protected string ServerName
+        {
+            get { return GetValue("Server"); }
+        }
+
+        protected string Username
+        {
+            get { return GetValue("user"); }
+        }
+
+        protected string Password
+        {
+            get { return GetValue("pass"); }
+        }
+
+        protected string JobName
+        {
+            get { return GetValue("job"); }
+        }
+
+
+        protected string GetValue(string name)
+        {
+            return Request.QueryString[name] ?? string.Empty;
+        }
     }
 }

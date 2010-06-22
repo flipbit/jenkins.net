@@ -26,7 +26,7 @@ namespace Hudson.Web.Controllers
         /// <returns></returns>
         public ActionResult List()
         {
-            if (string.IsNullOrEmpty(Settings.JobName))
+            if (string.IsNullOrEmpty(JobName))
             {
                 var model = new ServerModel();
 
@@ -35,13 +35,11 @@ namespace Hudson.Web.Controllers
                 return View(model);
             }
 
-            return Monitor(Settings.JobName);
+            return Monitor(JobName);
         }
 
         public ActionResult Monitor(string id)
         {
-            Settings.JobName = id;
-
             var jobName = Server.UrlDecode(id);
 
             if (HudsonServer == null)
@@ -73,7 +71,7 @@ namespace Hudson.Web.Controllers
                     Name = job.Name
                 };
 
-                return View(model);
+                return View("Monitor", model);
             }
 
             return RedirectToAction(ListName);

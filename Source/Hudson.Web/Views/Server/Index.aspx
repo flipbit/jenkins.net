@@ -37,17 +37,17 @@
         
                 <p>
                     <label for="url">URL:</label> 
-                    <input type="text" name="url" id="url" value="<%= Settings.Server %>" />
+                    <input type="text" name="url" id="url"  />
                 </p>
                 
                 <p>
                     <label for="username">Username:</label>
-                    <input type="text" name="username" value="<%= Settings.Username %>" />
+                    <input type="text" name="username" />
                 </p>
                 
                 <p>            
                     <label for="password">Password:</label>
-                    <input type="password" name="password" value="<%= Settings.Password %>" />
+                    <input type="password" name="password"  />
                 </p>
                 
                 <p class="btn">

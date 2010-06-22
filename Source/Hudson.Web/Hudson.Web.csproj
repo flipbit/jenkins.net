@@ -82,7 +82,6 @@
     <Compile Include="Controllers\Context.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ServerController.cs" />
-    <Compile Include="Controllers\Settings.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
