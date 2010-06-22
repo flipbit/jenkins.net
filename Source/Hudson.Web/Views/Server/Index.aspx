@@ -1,4 +1,5 @@
 <%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="Hudson.Web.Controllers" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -36,17 +37,17 @@
         
                 <p>
                     <label for="url">URL:</label> 
-                    <input type="text" name="url" id="url" />
+                    <input type="text" name="url" id="url" value="<%= Settings.Server %>" />
                 </p>
                 
                 <p>
                     <label for="username">Username:</label>
-                    <input type="text" name="username" />
+                    <input type="text" name="username" value="<%= Settings.Username %>" />
                 </p>
                 
                 <p>            
                     <label for="password">Password:</label>
-                    <input type="password" name="password" />
+                    <input type="password" name="password" value="<%= Settings.Password %>" />
                 </p>
                 
                 <p class="btn">

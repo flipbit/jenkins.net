@@ -39,21 +39,24 @@ namespace Hudson.Caching
         {
             Build build = new NullBuild(buildDescriptor);
 
-            var key = build.Number + "-" + build.Url;
-                 
-            if (Cache.ContainsKey(key))
+            if (buildDescriptor != null)
             {
-                build = Cache[key];
+                var key = build.Number + "-" + build.Url;
 
-                System.Diagnostics.Debug.WriteLine("Hit: " + key);
-            }
-            else
-            {
-                build = BuildService.GetBuild(buildDescriptor);
+                if (Cache.ContainsKey(key))
+                {
+                    build = Cache[key];
 
-                if (!build.Building) Cache.Add(key, build);
+                    System.Diagnostics.Debug.WriteLine("Hit: " + key);
+                }
+                else
+                {
+                    build = BuildService.GetBuild(buildDescriptor);
 
-                System.Diagnostics.Debug.WriteLine("Miss: " + key);
+                    if (!build.Building) Cache.Add(key, build);
+
+                    System.Diagnostics.Debug.WriteLine("Miss: " + key);
+                }
             }
 
             return build;

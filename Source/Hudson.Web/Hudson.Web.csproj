@@ -82,6 +82,7 @@
     <Compile Include="Controllers\Context.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ServerController.cs" />
+    <Compile Include="Controllers\Settings.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,18 +103,6 @@
     <Content Include="Js\Hudson.js" />
     <Content Include="Js\jquery-1.2.6.min-vsdoc.js" />
     <Content Include="Js\jquery-1.2.6.min.js" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Views\Job\Monitor.aspx" />
     <Content Include="Views\Job\List.aspx" />
     <Content Include="Views\Server\Index.aspx" />

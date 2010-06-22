@@ -35,7 +35,14 @@ namespace Hudson.Web.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            if (!string.IsNullOrEmpty(Settings.Server))
+            {
+                return Connect(Settings.Server, Settings.Username, Settings.Password);
+            }
+            else
+            {
+                return View();                
+            }
         }
 
         /// <summary>
@@ -58,6 +65,10 @@ namespace Hudson.Web.Controllers
             {
                 // Download the server information
                 HudsonServer = ServerService.GetServer(new Uri(url));
+
+                Settings.Server = url;
+                Settings.Username = username;
+                Settings.Password = password;
 
                 return RedirectToAction(JobController.ListName, JobController.ControllerName);
             }

@@ -26,15 +26,24 @@ namespace Hudson.Web.Controllers
         /// <returns></returns>
         public ActionResult List()
         {
-            var model = new ServerModel();
+            if (string.IsNullOrEmpty(Settings.JobName))
+            {
+                var model = new ServerModel();
 
-            model.Update(HudsonServer);
+                model.Update(HudsonServer);
 
-            return View(model);
+                return View(model);
+            }
+
+            return Monitor(Settings.JobName);
         }
 
         public ActionResult Monitor(string id)
         {
+            Settings.JobName = id;
+
+            var jobName = Server.UrlDecode(id);
+
             if (HudsonServer == null)
             {
                 return RedirectToAction("index", "server");
@@ -45,7 +54,7 @@ namespace Hudson.Web.Controllers
 
             foreach (var j in HudsonServer.Jobs)
             {
-                if (string.Compare(j.Name, id, true) != 0) continue;
+                if (string.Compare(j.Name, jobName, true) != 0) continue;
 
                 job = j;
                 build = j.LastBuild;

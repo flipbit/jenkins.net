@@ -5,7 +5,7 @@
 		<property name="resources.dir" value="${root.dir}\Build\Resources" readonly="true" />
     <property name="website.name" value="hudson" readonly="true" />
     
-		<property name="dotnet40" value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319" overwrite="false" />
+		<property name="dotnet40" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319" overwrite="false" />
 
 		<property name="revision" value="local"/>
 
