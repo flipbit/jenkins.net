@@ -34,7 +34,12 @@ namespace Hudson.Web.Controllers
             {
                 var response = context.Request;
 
-                return response.Cookies[CookieName][name] ?? string.Empty;
+                var cookie = response.Cookies[CookieName];
+
+                if (cookie != null)
+                {
+                    return cookie[name] ?? string.Empty;
+                }                
             }
 
             return string.Empty;
