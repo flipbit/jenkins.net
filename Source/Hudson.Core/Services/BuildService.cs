@@ -28,11 +28,14 @@ namespace Hudson.Services
 
             var url = new XmlApiPrepender().Prepend(build.Url);
 
-            var xml = XmlService.GetPage(url);
-
-            if (xml.IsValid)
+            if (buildDescriptor != null)
             {
-                build = new BuildMapper().Map(xml.Contents);
+                var xml = XmlService.GetPage(url);
+
+                if (xml.IsValid)
+                {
+                    build = new BuildMapper().Map(xml.Contents);
+                }
             }
 
             return build;

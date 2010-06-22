@@ -21,6 +21,12 @@ namespace Hudson.Web.Controllers
         public IJobService JobService { get; set; }
 
         /// <summary>
+        /// Gets or sets the build service.
+        /// </summary>
+        /// <value>The build service.</value>
+        public IBuildService BuildService { get; set; }
+
+        /// <summary>
         /// Lists the jobs on the Hudson server.
         /// </summary>
         /// <returns></returns>
@@ -57,6 +63,10 @@ namespace Hudson.Web.Controllers
                 job = j;
                 build = j.LastBuild;
             }
+            
+            // Refresh build
+            job = JobService.GetJob(job);
+            build = BuildService.GetBuild(job.LastBuild);
 
             if (build != null)
             {
