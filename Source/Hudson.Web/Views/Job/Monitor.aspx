@@ -8,7 +8,6 @@
         
         <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
         <script type="text/javascript" src="/js/monitor.js"></script>
-       
         
         <title>Hudson Status - <%= Model.Name %></title>
         
@@ -64,5 +63,7 @@
                 <%= Html.Encode(Model.Comments) %>
             </span>            
         </p>
+        <div id="status">
+        </div>
     </body>
 </html>
