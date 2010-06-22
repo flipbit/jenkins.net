@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.Web", "Hudson.Web\Hudson.Web.csproj", "{64DD23EF-6A2F-4BCF-8391-90FA0C7D6BDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.Test", "Hudson.Test\Hudson.Test.csproj", "{99E6F147-616A-4604-9D1A-51E655D0B53F}"

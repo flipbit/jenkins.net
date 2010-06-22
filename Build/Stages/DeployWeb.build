@@ -3,12 +3,17 @@
 	<target name="DeployWeb">
 
 		<property name="revision.dir" value="${deploy.dir}\Web" overwrite="true" />
-		<property name="install.latest.filename" value="${deploy.dir}\hudson-web-monitor-latest.zip" />
+
+    <exec program="C:\Windows\System32\inetsrv\appcmd.exe">
+			<arg value="stop" />
+			<arg value="site" />
+			<arg value="${website.name}" />
+		</exec>
 
 		<delete dir="${revision.dir}" if="${directory::exists(revision.dir)}" />
 		<mkdir dir="${revision.dir}" />
 
-		<exec program="${dotnet20}\aspnet_compiler.exe">
+		<exec program="${dotnet40}\aspnet_compiler.exe">
 			<arg value="-f" />
 			<arg value="-u" />
 			<arg value="-p" />
@@ -27,17 +32,17 @@
 			</fileset>
 		</delete>
 
+    <exec program="C:\Windows\System32\inetsrv\appcmd.exe">
+			<arg value="start" />
+			<arg value="site" />
+			<arg value="${website.name}" />
+		</exec>
+
 		<zip zipfile="${revision.dir}\..\hudson-web-monitor-${revision}.zip">
 			<fileset basedir="${revision.dir}">
 				<include name="**/*" />
 			</fileset>
 		</zip>
-
-		<delete dir="${revision.dir}" if="${directory::exists(revision.dir)}" />
-
-		<!-- Copy zip to latest filename -->
-		<delete file="${install.latest.filename}" if="${file::exists(install.latest.filename)}" />
-		<copy file="${revision.dir}\..\hudson-web-monitor-${revision}.zip" tofile="${install.latest.filename}" />
 
 	</target>
 

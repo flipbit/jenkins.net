@@ -2,7 +2,7 @@
 	<target name="Compile">
 
 		<exec basedir="${root.dir}\Source"
-			program="${dotnet35}\msbuild.exe">
+			program="${dotnet40}\msbuild.exe">
 			<arg value="${root.dir}\Source\Hudson.sln" />
 			<arg value="/t:Build" />
 			<arg value="/p:Configuration=Release" />
