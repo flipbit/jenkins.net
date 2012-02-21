@@ -45,7 +45,7 @@ namespace Hudson.Services
                     request.Headers["Authorization"] = "Basic " + authInfo;
                 }
 
-                using (var response = Retry.This(request.GetResponse, 3, 10000))
+                using (var response = Retry.This(request.GetResponse, 3, 20000))
                 {
                     using (var stream = response.GetResponseStream())
                     {
