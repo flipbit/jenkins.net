@@ -34,10 +34,12 @@ namespace Hudson.Services
                 var request = WebRequest.Create(url);
 
                 request.Method = "GET";
-                request.Timeout = 10000;
+                request.Timeout = 90000;
 
                 if (Context.RequireAuthentication)
                 {
+                    request.PreAuthenticate = true;
+
                     var authInfo = Context.Username + ":" + Context.Password;
 
                     authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
@@ -45,7 +47,7 @@ namespace Hudson.Services
                     request.Headers["Authorization"] = "Basic " + authInfo;
                 }
 
-                using (var response = Retry.This(request.GetResponse, 3, 20000))
+                using (var response = request.GetResponse())
                 {
                     using (var stream = response.GetResponseStream())
                     {
