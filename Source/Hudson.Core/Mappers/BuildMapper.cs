@@ -21,20 +21,20 @@ namespace Hudson.Mappers
 
             if (xml != null)
             {
-                build = new Build();
+                build = new Build
+                {
+                    Description = xml.Find("//shortDescription"),
+                    Building = bool.Parse(xml.Find("//building")),
+                    Duration = xml.FindInteger("//duration"),
+                    FullDisplayName = xml.Find("//fullDisplayName"),
+                    KeepLog = bool.Parse(xml.Find("//keepLog")),
+                    Number = xml.FindInteger("//number"),
+                    Success = xml.Find("//result") == "SUCCESS",
+                    Url = new Uri(xml.Find("//url")),
+                    User = xml.Find("//author//fullName")
+                };
 
                 // Hudson Properties
-                build.Description = xml.Find("//shortDescription");
-                build.Building = bool.Parse(xml.Find("//building"));
-                build.Duration = xml.FindInteger("//duration");
-                build.FullDisplayName = xml.Find("//fullDisplayName");
-                build.KeepLog = bool.Parse(xml.Find("//keepLog"));
-                build.Number = xml.FindInteger("//number");
-                build.Success = xml.Find("//result") == "SUCCESS";
-                build.Url = new Uri(xml.Find("//url"));
-                build.User = xml.Find("//user");
-                
-
 
                 DateTime created;
 
@@ -47,8 +47,8 @@ namespace Hudson.Mappers
 
                 build.Created = JavaTimeStampToDateTime(seconds);
 
-                // SVN Properties
-                build.Revision = xml.FindInteger("//revision");
+                // GIT Properties
+                build.Revision = xml.Find("//lastBuiltRevision//SHA1");
                 build.Comments = xml.Find("//msg");
             }
 

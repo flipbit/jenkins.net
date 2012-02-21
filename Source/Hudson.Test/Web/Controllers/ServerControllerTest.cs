@@ -6,6 +6,7 @@ using NUnit.Framework;
 namespace Hudson.Web.Controllers
 {
     [TestFixture]
+    [Ignore]
     public class ServerControllerTest
     {
         private ServerController controller;

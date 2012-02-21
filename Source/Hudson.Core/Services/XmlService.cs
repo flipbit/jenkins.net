@@ -2,7 +2,6 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Windows.Forms;
 using Hudson.Core;
 using Hudson.Domain;
 using Hudson.Interfaces;
@@ -46,7 +45,7 @@ namespace Hudson.Services
                     request.Headers["Authorization"] = "Basic " + authInfo;
                 }
 
-                using (var response = request.GetResponse())
+                using (var response = Retry.This(request.GetResponse, 3, 10000))
                 {
                     using (var stream = response.GetResponseStream())
                     {
