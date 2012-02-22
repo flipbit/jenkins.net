@@ -48,7 +48,8 @@ namespace Hudson.Mappers
                 build.Created = JavaTimeStampToDateTime(seconds);
 
                 // GIT Properties
-                build.Revision = xml.Find("//lastBuiltRevision//SHA1").Substring(0, 5);
+                var rev = xml.Find("//lastBuiltRevision//SHA1");
+                build.Revision =  rev.Length > 5 ? rev.Substring(0, 5) : rev;
                 build.Comments = xml.FindLast("//msg");
             }
 
