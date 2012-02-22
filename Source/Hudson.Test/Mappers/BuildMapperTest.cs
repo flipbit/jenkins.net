@@ -24,17 +24,18 @@ namespace Hudson.Mappers
 
             Assert.IsNotNull(build);
 
-            Assert.AreEqual("Started by user", build.Description);
+            Assert.AreEqual("Started by an SCM change", build.Description);
             Assert.AreEqual(true, build.Building);
-            Assert.AreEqual(28204, build.Duration);
+            Assert.AreEqual(811570, build.Duration);
             Assert.AreEqual("first-job #92", build.FullDisplayName);
             Assert.AreEqual(false, build.KeepLog);
-            Assert.AreEqual("Changed account.", build.Comments);
-            Assert.AreEqual(92, build.Number);
-            Assert.AreEqual(119, build.Revision);
+            Assert.AreEqual("Fixed stuff.", build.Comments);
+            Assert.AreEqual(1124, build.Number);
+            Assert.AreEqual("fa882", build.Revision);
             Assert.AreEqual(true, build.Success);
             Assert.AreEqual("http://www.example.com/job/first-job/92/", build.Url.ToString());
-            Assert.AreEqual(DateTime.Parse("2009-06-21 18:49:37"), build.Created);
+            Assert.AreEqual(DateTime.Parse("2012-02-20 17:09:39"), build.Created);
+            Assert.AreEqual("test.user", build.User);
         }
     }
 }

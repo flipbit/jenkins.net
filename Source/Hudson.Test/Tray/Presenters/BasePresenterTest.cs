@@ -5,6 +5,7 @@ using NUnit.Framework;
 namespace Hudson.Tray.Presenters
 {
     [TestFixture]
+    [Ignore]
     public class BasePresenterTest
     {
         private FakePresenter presenter;

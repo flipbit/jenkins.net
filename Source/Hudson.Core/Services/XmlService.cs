@@ -2,7 +2,6 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Windows.Forms;
 using Hudson.Core;
 using Hudson.Domain;
 using Hudson.Interfaces;
@@ -35,10 +34,12 @@ namespace Hudson.Services
                 var request = WebRequest.Create(url);
 
                 request.Method = "GET";
-                request.Timeout = 10000;
+                request.Timeout = 90000;
 
                 if (Context.RequireAuthentication)
                 {
+                    request.PreAuthenticate = true;
+
                     var authInfo = Context.Username + ":" + Context.Password;
 
                     authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));

@@ -21,20 +21,21 @@ namespace Hudson.Mappers
 
             if (xml != null)
             {
-                job = new Job();
-
-                job.Name = xml.Find("//name");
-                job.Description = xml.Find("//description");
-                job.DisplayName = xml.Find("//displayName");
-                job.Url = xml.FindUri("//url");
-                job.Buildable = bool.Parse(xml.Find("//buildable"));
-                job.BuildStatus = BuildStatusParser.Parse(xml.Find("//color"));
-                job.HealthReport = xml.Find("//healthReport/description");
-                job.IconUrl = xml.Find("//healthReport/iconUrl");
-                job.Score = xml.FindInteger("//healthReport/score");
-                job.InQueue = bool.Parse(xml.Find("//inQueue"));
-                job.KeepDependencies = bool.Parse(xml.Find("//keepDependencies"));
-                job.NextBuildNumber = xml.FindInteger("//nextBuildNumber");
+                job = new Job
+                {
+                    Name = xml.Find("//name"),
+                    Description = xml.Find("//description"),
+                    DisplayName = xml.Find("//displayName"),
+                    Url = xml.FindUri("//url"),
+                    Buildable = bool.Parse(xml.Find("//buildable")),
+                    BuildStatus = BuildStatusParser.Parse(xml.Find("//color")),
+                    HealthReport = xml.Find("//healthReport/description"),
+                    IconUrl = xml.Find("//healthReport/iconUrl"),
+                    Score = xml.FindInteger("//healthReport/score"),
+                    InQueue = bool.Parse(xml.Find("//inQueue")),
+                    KeepDependencies = bool.Parse(xml.Find("//keepDependencies")),
+                    NextBuildNumber = xml.FindInteger("//nextBuildNumber")
+                };
             }
 
             return job;

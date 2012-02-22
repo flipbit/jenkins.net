@@ -1,38 +1,83 @@
-﻿<freeStyleBuild>
-  <action>
-    <cause>
-      <shortDescription>Started by user</shortDescription>
-    </cause>
-  </action>
-  <action></action>
-  <building>true</building>
-  <duration>28204</duration>
-  <fullDisplayName>first-job #92</fullDisplayName>
-  <keepLog>false</keepLog>
-  <number>92</number>
-  <result>SUCCESS</result>
-  <timestamp>1245606576953</timestamp>
-  <url>http://www.example.com/job/first-job/92/</url>
-  <builtOn></builtOn>
-  <changeSet>
-    <item>
-      <date>2009-06-21</date>
-      <msg>Changed account.</msg>
-      <path>
-        <editType>edit</editType>
-        <file>/Source/File.cs</file>
-      </path>
-      <revision>119</revision>
-      <user>user</user>
-    </item>
-    <kind>svn</kind>
-    <revision>
-      <module>svn://www.example.com/respository</module>
-      <revision>119</revision>
-    </revision>
-  </changeSet>
-  <culprit>
-    <absoluteUrl>http://www.example.com/user/user</absoluteUrl>
-    <fullName>user</fullName>
-  </culprit>
+<freeStyleBuild>
+	<action>
+		<cause>
+			<shortDescription>Started by an SCM change</shortDescription>
+		</cause>
+	</action>
+	<action></action>
+	<action>
+		<buildsByBranchName>
+			<originmaster>
+				<buildNumber>1124</buildNumber>
+				<revision>
+					<SHA1>fa8825becade7adf64212e2395460d290e201d08</SHA1>
+					<branch>
+						<SHA1>fa8825becade7adf64212e2395460d290e201d08</SHA1>
+						<name>origin/HEAD</name>
+					</branch>
+					<branch>
+						<SHA1>fa8825becade7adf64212e2395460d290e201d08</SHA1>
+						<name>origin/master</name>
+					</branch>
+				</revision>
+			</originmaster>
+		</buildsByBranchName>
+		<lastBuiltRevision>
+			<SHA1>fa8825becade7adf64212e2395460d290e201d08</SHA1>
+			<branch>
+				<SHA1>fa8825becade7adf64212e2395460d290e201d08</SHA1>
+				<name>origin/HEAD</name>
+			</branch>
+			<branch>
+				<SHA1>fa8825becade7adf64212e2395460d290e201d08</SHA1>
+				<name>origin/master</name>
+			</branch>
+		</lastBuiltRevision>
+		<scmName></scmName>
+	</action>
+	<action></action>
+	<building>true</building>
+	<duration>811570</duration>
+	<fullDisplayName>first-job #92</fullDisplayName>
+	<id>2012-02-20_17-00-00</id>
+	<keepLog>false</keepLog>
+	<number>1124</number>
+	<result>SUCCESS</result>
+	<timestamp>1329757779000</timestamp>
+	<url>http://www.example.com/job/first-job/92/</url>
+	<builtOn></builtOn>
+	<changeSet>
+		<item>
+			<author>
+				<absoluteUrl>http://www.example.com:3333/user/test.other</absoluteUrl>
+				<fullName>test.other</fullName>
+			</author>
+			<comment>Ignore this.</comment>
+			<date>2012-02-20 17:00:00 +0000</date>
+			<id>d7da709252cbeff92c7992a4ca89908b6f68bbe1</id>
+			<msg>Ignore this.</msg>
+			<path>
+				<editType>edit</editType>
+				<file>Source/File.cs</file>
+			</path>
+		</item>
+		<item>
+			<author>
+				<absoluteUrl>http://www.example.com:3333/user/test.user</absoluteUrl>
+				<fullName>test.user</fullName>
+			</author>
+			<comment>Fixed stuff.</comment>
+			<date>2012-02-20 17:00:00 +0000</date>
+			<id>d7da709252cbeff92c7992a4ca89908b6f68bbe1</id>
+			<msg>Fixed stuff.</msg>
+			<path>
+				<editType>edit</editType>
+				<file>Source/File.cs</file>
+			</path>
+		</item>
+	</changeSet>
+	<culprit>
+		<absoluteUrl>http://www.example.com:3333/user/other.guy</absoluteUrl>
+		<fullName>other.guy</fullName>
+	</culprit>
 </freeStyleBuild>

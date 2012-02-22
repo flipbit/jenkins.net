@@ -11,7 +11,7 @@ namespace Hudson.Domain
         /// Gets or sets the revision.
         /// </summary>
         /// <value>The revision.</value>
-        public int Revision { get; set; }
+        public string Revision { get; set; }
 
         /// <summary>
         /// Gets or sets the created.
