@@ -31,7 +31,7 @@ namespace Hudson.Mappers
                     Number = xml.FindInteger("//number"),
                     Success = xml.Find("//result") == "SUCCESS",
                     Url = new Uri(xml.Find("//url")),
-                    User = xml.Find("//author//fullName")
+                    User = xml.FindLast("//author//fullName")
                 };
 
                 // Hudson Properties
@@ -48,8 +48,8 @@ namespace Hudson.Mappers
                 build.Created = JavaTimeStampToDateTime(seconds);
 
                 // GIT Properties
-                build.Revision = xml.Find("//lastBuiltRevision//SHA1");
-                build.Comments = xml.Find("//msg");
+                build.Revision = xml.Find("//lastBuiltRevision//SHA1").Substring(0, 5);
+                build.Comments = xml.FindLast("//msg");
             }
 
             return build;

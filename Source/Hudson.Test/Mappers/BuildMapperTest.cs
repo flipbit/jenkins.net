@@ -31,7 +31,7 @@ namespace Hudson.Mappers
             Assert.AreEqual(false, build.KeepLog);
             Assert.AreEqual("Fixed stuff.", build.Comments);
             Assert.AreEqual(1124, build.Number);
-            Assert.AreEqual("fa8825becade7adf64212e2395460d290e201d08", build.Revision);
+            Assert.AreEqual("fa882", build.Revision);
             Assert.AreEqual(true, build.Success);
             Assert.AreEqual("http://www.example.com/job/first-job/92/", build.Url.ToString());
             Assert.AreEqual(DateTime.Parse("2012-02-20 17:09:39"), build.Created);
