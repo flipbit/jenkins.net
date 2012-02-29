@@ -21,6 +21,14 @@ namespace Hudson.Extensions
             return int.TryParse(valueAsString, out value) ? value : 0;
         }
 
+        public static string FindLast(this XmlNode xml, string xpath)
+        {
+            var selectedNodes = xml.SelectNodes(xpath);
+
+            return selectedNodes == null || selectedNodes.Count == 0 ? 
+                String.Empty : 
+                selectedNodes[selectedNodes.Count - 1].InnerText;
+        }
 
         /// <summary>
         /// Finds the given node and returns it as a <see cref="Uri"/> object.

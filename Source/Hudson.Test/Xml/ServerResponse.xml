@@ -1,27 +1,27 @@
-﻿<hudson>
-  <description>&lt;center&gt;&lt;b&gt;Build Server&lt;/b&gt;&lt;/center&gt;</description>
-  <job>
-    <name>first-job</name>
-    <url>http://www.example.com/job/first-job/</url>
-    <color>disabled</color>
-  </job>
-  <job>
-    <name>second-job</name>
-    <url>http://www.example.com/job/second-job/</url>
-    <color>blue</color>
-  </job>
-  <job>
-    <name>third-job</name>
-    <url>http://www.example.com/job/third-job/</url>
-    <color>disabled</color>
-  </job>
-  <primaryView>
-    <name>All</name>
-    <url>http://www.example.com/</url>
-  </primaryView>
-  <slaveAgentPort>0</slaveAgentPort>
-  <view>
-    <name>All</name>
-    <url>http://www.example.com/</url>
-  </view>
+<hudson>
+  	<description>&lt;center&gt;&lt;b&gt;Build Server&lt;/b&gt;&lt;/center&gt;</description>
+  	<job>
+    	<name>first-job</name>
+    	<url>http://www.example.com/job/first-job/</url>
+    	<color>disabled</color>
+  	</job>
+  	<job>
+    	<name>second-job</name>
+    	<url>http://www.example.com/job/second-job/</url>
+    	<color>blue</color>
+  	</job>
+  	<job>
+    	<name>third-job</name>
+    	<url>http://www.example.com/job/third-job/</url>
+    	<color>disabled</color>
+  	</job>
+  	<primaryView>
+    	<name>All</name>
+    	<url>http://www.example.com/</url>
+  	</primaryView>
+  	<slaveAgentPort>0</slaveAgentPort>
+  	<view>
+    	<name>All</name>
+    	<url>http://www.example.com/</url>
+  	</view>
 </hudson>

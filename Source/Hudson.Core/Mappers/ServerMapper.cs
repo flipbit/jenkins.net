@@ -21,10 +21,10 @@ namespace Hudson.Mappers
             if (xml != null)
             {
                 server = new Server
-                             {
-                                 Description = xml.Find("//description"), 
-                                 Url = xml.FindUri("//url")
-                             };
+                {
+                    Description = xml.Find("//description"), 
+                    Url = xml.FindUri("//url")
+                };
             }
 
             return server;

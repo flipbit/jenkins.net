@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using Hudson.Domain;
 using Hudson.Extensions;
@@ -25,19 +26,15 @@ namespace Hudson.Mappers
 
             if (nodes != null)
             {
-                foreach (XmlNode node in nodes)
-                {
-                    var xmlNode = node.CloneNode(true);
-
-                    var descriptor = new JobDescriptor
-                                         {
-                                             Name = xmlNode.Find("//name"),
-                                             Url = new Uri(xmlNode.Find("//url")),
-                                             Status = BuildStatusParser.Parse(xmlNode.Find("//color"))
-                                         };
-
-                    descriptors.Add(descriptor);
-                }
+                descriptors.AddRange(
+                    nodes.Cast<XmlNode>()
+                    .Select(node => node.CloneNode(true))
+                    .Select(xmlNode => new JobDescriptor
+                    {
+                        Name = xmlNode.Find("//name"),
+                        Url = new Uri(xmlNode.Find("//url")),
+                        Status = BuildStatusParser.Parse(xmlNode.Find("//color"))
+                    }));
             }
 
             return descriptors;
